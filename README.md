@@ -1,3 +1,4 @@
+![image](http://github.com/RunzeXu/AI-detection-weapons/raw/master/asset/integrated-logo-126x126-04.png)
 # AI-detection-weapons
 # Overview
 AI-based System for Automatic Detection and Recognition of Weapons in Surveillance Video.
