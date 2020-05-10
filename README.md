@@ -1,5 +1,4 @@
 ![st-colour.jpg](asset/st-colour.jpg)
-# AI-detection-weapons
 # Overview
 AI-based System for Automatic Detection and Recognition of Weapons in Surveillance Video.
 
