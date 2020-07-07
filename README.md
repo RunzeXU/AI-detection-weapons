@@ -11,18 +11,18 @@ Security cameras and video surveillance systems have become important infrastruc
 *****
 # Table of contents
 * [Introduction](#Introduction)
-* [System Design](#SystemDesign)
+* [System Design](#System Design)
 * [Methodologies](#Methodologies)
 * [Environment](#Environment)
-* [Usage&Deploy](#Usage&Deploy)
+* [Usage](#Usage)
 *****
 # Introduction
 At present, Artificial intelligence is no longer part of a strange new term. Not only the ALPHAGO but also the face scan payment technology, even drones, and driverless vehicles, the application of artificial intelligence gradually involves many aspects of our daily life. No doubt safety is one of the most important aspects of daily life and technology is becoming more mature. Nevertheless, today's mainstream security methods have been unable to meet the numerous security risks posed by technological development. The problem is that it is difficult to find a safe, effective, and low-cost way to ensure security.
 
 So, Artificial intelligence will be used to improve this situation. In Hong Kong, the popularity rate of surveillance cameras is already high. There is a total of 24,591 surveillance cameras. This project plan through combining artificial intelligence with the existing surveillance cameras to automatically detect and recognize firearms, knives, and other weapons in a streaming video captured by a surveillance camera.
 ****
-# SystemDesign
+# System Design
 # Methodologies
 # Environment
-# Usage&Deploy
+# Usage
 
