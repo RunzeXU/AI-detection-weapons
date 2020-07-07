@@ -14,7 +14,7 @@ Security cameras and video surveillance systems have become important infrastruc
 * [System Design](#SystemDesign)
 * [Methodologies](#Methodologies)
 * [Environment](#Environment)
-* [Usage & Deploy](#Usage&Deploy)
+* [Usage&Deploy](#Usage&Deploy)
 *****
 # Introduction
 At present, Artificial intelligence is no longer part of a strange new term. Not only the ALPHAGO but also the face scan payment technology, even drones, and driverless vehicles, the application of artificial intelligence gradually involves many aspects of our daily life. No doubt safety is one of the most important aspects of daily life and technology is becoming more mature. Nevertheless, today's mainstream security methods have been unable to meet the numerous security risks posed by technological development. The problem is that it is difficult to find a safe, effective, and low-cost way to ensure security.
