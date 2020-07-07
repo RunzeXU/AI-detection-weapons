@@ -11,7 +11,7 @@ Security cameras and video surveillance systems have become important infrastruc
 *****
 # Table of contents
 * [Introduction](#Introduction)
-* [System Design](#System Design)
+* [System](#System)
 * [Methodologies](#Methodologies)
 * [Environment](#Environment)
 * [Usage](#Usage)
@@ -21,7 +21,7 @@ At present, Artificial intelligence is no longer part of a strange new term. Not
 
 So, Artificial intelligence will be used to improve this situation. In Hong Kong, the popularity rate of surveillance cameras is already high. There is a total of 24,591 surveillance cameras. This project plan through combining artificial intelligence with the existing surveillance cameras to automatically detect and recognize firearms, knives, and other weapons in a streaming video captured by a surveillance camera.
 ****
-# System Design
+# System
 # Methodologies
 # Environment
 # Usage
