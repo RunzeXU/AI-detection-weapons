@@ -11,10 +11,10 @@ Security cameras and video surveillance systems have become important infrastruc
 *****
 # Table of contents
 * [Introduction](#Introduction)
-* [SystemDesign](#SystemDesign)
+* [System-Design](#SystemDesign)
 * [Methodologies](#Methodologies)
 * [Environment](#Environment)
-* [Usage&Deploy](#Usage&Deploy)
+* [Usage-&-Deploy](#Usage&Deploy)
 *****
 # Introduction
 # System Design
