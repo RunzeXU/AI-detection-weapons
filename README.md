@@ -28,7 +28,7 @@ Above figure shows the functional blocks of the proposed system. After the video
 
 ![flowc2.JPG](asset/flowc2.JPG)
 
-*Mode 1: Energy-saving mode
+* Mode 1: Energy-saving mode
 	Method: 
 1. Load the surveillance video
 2. Video input into the keyframes extraction system
@@ -38,8 +38,25 @@ Above figure shows the functional blocks of the proposed system. After the video
 *	Applicable environment: Suitable for the night when the flow of people is low or in low-security risk areas.
 * Advantage: short detection time and save computing resources.
 *	Disadvantage: There is a certain security risk.
+![flowchart1.JPG](asset/flowchart1.JPG)
+* Mode 2: High-performance mode
+	Method:
+1.	Load the Real-time surveillance video 
+2.	Video as input, detect Real-time directly and frame-by-frame detection
+3.	Labe & classify the weapons
+*	Purpose: Provide the highest level of security. To eliminate all dangerous situations.
+*	Applicable environment: In densely populated areas or periods, or high-security risk areas.
+*	Advantage: Provides the highest level of protection.
+*	Disadvantage: Consumes a lot of computing power and resources and compare with Energy-saving mode, the detection time is longer.
+![flowchart3.JPG](asset/flowchart3.JPG)
+According to flowchart, when the system starts running, first the system will load the surveillance video captured by the IP camera. But surveillance video usually contains a lot of worthless fragments. As a result, this will cause the system to increase the amount of calculation and slow down the detection speed. So that the system does not go to each frame to detect video. Instead, the system will take an image of the valid frame as an input, to speed up the detection.
 
+When the image is entered into the system, the system will trough grayscale conversion to remove the background features of the image and convert the image into black and white. After the processing finished, the system will detect the objects in the image. Through Single Shot MultiBox Detector Algorithm (SSD) MobileNet, the system can extract features from the objects.
+
+After extracting the feature, the system can solve the identification problem and output which category the object belongs to. When the object is detected as belonging to a weapon, the system will locate and label the weapon.
+****
 # Methodologies
+
 # Environment
 # Usage
 
