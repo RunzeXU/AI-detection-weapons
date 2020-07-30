@@ -23,11 +23,11 @@ So, Artificial intelligence will be used to improve this situation. In Hong Kong
 ****
 # System
 ![flowchart4.png](asset/flowchart4.png)
-```
+
 Above figure shows the functional blocks of the proposed system. After the video is captured by the surveillance camera, it is passed to the keyframe extraction subsystem, which reduces data size by selecting keyframes for the feasible real-time running of the subsequence steps. The extracted frames are then inputted into the weapon detection algorithm. The detected weapons are classified and labeled.
-```
+
 ![flowc2.jpg](asset/flowc2.jpg)
-```
+
 *Mode 1: Energy-saving mode
 	Method: 
 1. Load the surveillance video
@@ -38,7 +38,7 @@ Above figure shows the functional blocks of the proposed system. After the video
 *	Applicable environment: Suitable for the night when the flow of people is low or in low-security risk areas.
 * Advantage: short detection time and save computing resources.
 *	Disadvantage: There is a certain security risk.
-```
+
 # Methodologies
 # Environment
 # Usage
