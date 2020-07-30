@@ -66,8 +66,10 @@ When a surveillance video enters the system, because the surveillance video cont
 In this project, the keyframe extract algorithm is based on interframe difference. The video sequence captured by the camera is continuous, if there are no moving objects in the scene, the change of continuous frames is very small; if there are moving objects, there will be significant changes between successive frames. So that based on this concept, the interframe difference will be used to extract the keyframe from the surveillance video.
 
 Consider `frame n` and `n-1` of the video sequence as `f_k` and `f_(k-1)`, The grayscale values of the corresponding pixel points of the two frames are denoted as` f_k (x, y)` and `f_(k-1) (x, y)`. Subtract  `f_k (x, y)` and `f_(k-1) (x, y)`, take the absolute value, get the difference image `D_K`
+
 ![euqation3.png](asset/equation3.png)
-![euqation1.png](asset/equation1.png)
+
+![euqation1.JPG](asset/equation1.JPG)
 
 
 # Environment
