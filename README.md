@@ -54,12 +54,21 @@ Above figure shows the functional blocks of the proposed system. After the video
 
 According to flowchart, when the system starts running, first the system will load the surveillance video captured by the IP camera. But surveillance video usually contains a lot of worthless fragments. As a result, this will cause the system to increase the amount of calculation and slow down the detection speed. So that the system does not go to each frame to detect video. Instead, the system will take an image of the valid frame as an input, to speed up the detection.
 
-When the image is entered into the system, the system will trough grayscale conversion to remove the background features of the image and convert the image into black and white. After the processing finished, the system will detect the objects in the image. Through Single Shot MultiBox Detector Algorithm (SSD) MobileNet, the system can extract features from the objects.
+When the image is entered into the system, the system will trough grayscale conversion to remove the background features of the image and convert the image into black and white. After the processing finished, the system will detect the objects in the image. Through `Single Shot MultiBox Detector Algorithm (SSD) MobileNet`, the system can extract features from the objects.
 
 After extracting the feature, the system can solve the identification problem and output which category the object belongs to. When the object is detected as belonging to a weapon, the system will locate and label the weapon.
 
 ****
 # Methodologies
+## Key Frame Extraction
+When a surveillance video enters the system, because the surveillance video contains many frames and the scenes of many frames are unchanged. If we analyze each frame of video one by one, this will increase the amount of calculation and reduce the detection efficiency. So, for the expected result, the system will extract valid frames and preprocessed videos, for example, capture the screen every 20 frames.
+
+In this project, the keyframe extract algorithm is based on interframe difference. The video sequence captured by the camera is continuous, if there are no moving objects in the scene, the change of continuous frames is very small; if there are moving objects, there will be significant changes between successive frames. So that based on this concept, the interframe difference will be used to extract the keyframe from the surveillance video.
+
+Consider `frame n` and `n-1` of the video sequence as `f_k` and `f_(k-1)`, The grayscale values of the corresponding pixel points of the two frames are denoted as` f_k (x, y)` and `f_(k-1) (x, y)`. Subtract  `f_k (x, y)` and `f_(k-1) (x, y)`, take the absolute value, get the difference image `D_K`
+![euqation3.png](asset/equation3.png)
+![euqation1.png](asset/equation1.png)
+
 
 # Environment
 # Usage
