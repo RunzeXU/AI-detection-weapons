@@ -26,7 +26,7 @@ So, Artificial intelligence will be used to improve this situation. In Hong Kong
 
 Above figure shows the functional blocks of the proposed system. After the video is captured by the surveillance camera, it is passed to the keyframe extraction subsystem, which reduces data size by selecting keyframes for the feasible real-time running of the subsequence steps. The extracted frames are then inputted into the weapon detection algorithm. The detected weapons are classified and labeled.
 
-![flowc2.jpg](asset/flowc2.jpg)
+![flowc2.JPG](asset/flowc2.JPG)
 
 *Mode 1: Energy-saving mode
 	Method: 
