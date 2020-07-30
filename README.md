@@ -101,7 +101,7 @@ Below is a brief overview of how to fine-tune existing models for custom objects
 5. Setting up the configuration file for the model. The initial configuration parameter settings are shown in Table 1.
 6. Train the model by using the TFRecord files of the keyframe extraction output images and the configuration file.
 
-_TABLE 1_
+      **TABLE 1**
 Name|     parameter      |
 --------- | --------|
  Pretrained model |ssd_moblienet_v1_coco |
@@ -112,7 +112,7 @@ Batch_size  | 5 |
 Initial_learning_rate  | 0.004 |
 Max_detections_per_class  | 100 |
 Max_total_detections  |    100     |
-	 
+****
 # Environment
 # Usage
 
