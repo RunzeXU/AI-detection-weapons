@@ -22,6 +22,7 @@ At present, Artificial intelligence is no longer part of a strange new term. Not
 So, Artificial intelligence will be used to improve this situation. In Hong Kong, the popularity rate of surveillance cameras is already high. There is a total of 24,591 surveillance cameras. This project plan through combining artificial intelligence with the existing surveillance cameras to automatically detect and recognize firearms, knives, and other weapons in a streaming video captured by a surveillance camera.
 ****
 # System
+
 # Methodologies
 # Environment
 # Usage
