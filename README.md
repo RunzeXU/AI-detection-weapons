@@ -67,9 +67,9 @@ In this project, the keyframe extract algorithm is based on interframe differenc
 
 Consider `frame n` and `n-1` of the video sequence as `f_k` and `f_(k-1)`, The grayscale values of the corresponding pixel points of the two frames are denoted as` f_k (x, y)` and `f_(k-1) (x, y)`. Subtract  `f_k (x, y)` and `f_(k-1) (x, y)`, take the absolute value, get the difference image `D_K`
 
-![euqation3.png](asset/equation3.png)
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/euqation3.png)
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/euqation1.png)
 
-![euqation1.JPG](asset/equation1.JPG)
 
 
 # Environment
