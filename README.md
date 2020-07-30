@@ -68,10 +68,51 @@ In this project, the keyframe extract algorithm is based on interframe differenc
 Consider `frame n` and `n-1` of the video sequence as `f_k` and `f_(k-1)`, The grayscale values of the corresponding pixel points of the two frames are denoted as` f_k (x, y)` and `f_(k-1) (x, y)`. Subtract  `f_k (x, y)` and `f_(k-1) (x, y)`, take the absolute value, get the difference image `D_K`
 
 ![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/euqation3.png)
+
 ![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/euqation1.png)
 
+Set the segmentation threshold `T_1`, Then, the difference image is subjected to threshold segmentation to obtain a binarized foreground image.
+In this formula, `R_k (x,y)` is the binary foreground image. If the pixel value of a point in the `inter-frame difference` image is less than the threshold value`T_1`, the point with gray value 0 is judged as the background point. If the `D_K (X,Y)` greater than the threshold value `T_1`, the point is judged as the foreground (moving target) point. The operation flow of the `inter-frame difference` is shown below Figure .
 
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/euqation2.png)
 
+    In this project, the local maximum algorithm based on interframe difference is used to extract keyframes. 
+    The frames in which the average interframe difference are local maximum are considered to be keyframes.
+
+## Weapons Detection And Recognition
+The system was developed based on `TensorFlow`, which is an open-source platform for machine learning; the `Single Shot MultiBox Detector (SSD)`, a popular object detection algorithm; and `MobileNet`, which is a neural network (NN) for producing high-level features. the `SSD-MobileNet` model, which consisted of a `Single Shot MultiBox Detector (SSD)` and `MobileNet lightweight deep neural networks`. In the `SSD_MobileNet`, the `MobileNet` performs as the feature extractor for object prediction or feature extraction at different scales in the convolutional layers. With the extracted features from MobileNet, the `SSD` algorithm was used to obtain the feature information to locate and classify the detected object(s)
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/ssdflowchart.png)
+
+Figure shows the operation flow of Object Detection. First, the system gets an image, then crop this image and input this image into the object detection system. After that, the image enters into the `SSD-MobileNet` model, also through TensorFlow, parameters were deployed to the trained model into `SSD-MobileNet`. Finally, the weapons detection result will be got.
+
+In this project, the neural network is trained using supervised classification learning in two basic steps:
+1. A dataset from the COCO dataset of each weapon is created.
+2. Using the above dataset to train the weapons detector by fine-tuned the existing pre-trained model.
+
+The COCO dataset project is a large visual database for visual object recognition software research. In this project, the data is 1218 machine gun images from the COCO dataset.
+The result of fine-tuning is a more efficient model that can detect more Weapons and improve efficiency.
+Below is a brief overview of how to fine-tune existing models for custom objects to meet the needs of detecting weapons:
+
+1. Use the images extracted by keyframe extraction function as the train and test images.
+2. Use the software ‘LabelImg’, manually label the train images. Create an `XML` file that describes the objects in the pictures. This is called labeling.
+3. Convert the `XML` files to `CSV` files.
+4. Generate the `TFRecord` file from the `CSV` file.
+5. Setting up the configuration file for the model. The initial configuration parameter settings are shown in Table 1.
+6. Train the model by using the TFRecord files of the keyframe extraction output images and the configuration file.
+
+_TABLE 1_
+Name|     parameter      |
+--------- | --------|
+ Pretrained model |ssd_moblienet_v1_coco |
+Num_classes  | 5 |
+Matched_threshold  | 0.5 |
+Unmatched_threshold  | 0.5 |
+Batch_size  | 5 |
+Initial_learning_rate  | 0.004 |
+Max_detections_per_class  | 100 |
+Max_total_detections  |    100     |
+	 
 # Environment
 # Usage
 
