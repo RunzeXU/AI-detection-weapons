@@ -22,7 +22,23 @@ At present, Artificial intelligence is no longer part of a strange new term. Not
 So, Artificial intelligence will be used to improve this situation. In Hong Kong, the popularity rate of surveillance cameras is already high. There is a total of 24,591 surveillance cameras. This project plan through combining artificial intelligence with the existing surveillance cameras to automatically detect and recognize firearms, knives, and other weapons in a streaming video captured by a surveillance camera.
 ****
 # System
-
+![flowchart4.png](asset/flowchart4.png)
+```
+Above figure shows the functional blocks of the proposed system. After the video is captured by the surveillance camera, it is passed to the keyframe extraction subsystem, which reduces data size by selecting keyframes for the feasible real-time running of the subsequence steps. The extracted frames are then inputted into the weapon detection algorithm. The detected weapons are classified and labeled.
+```
+![flowc2.jpg](asset/flowc2.jpg)
+```
+*Mode 1: Energy-saving mode
+	Method: 
+1. Load the surveillance video
+2. Video input into the keyframes extraction system
+3. Detect extracted images
+4. Labe & classify the weapons
+*	Purpose: Within a typical surveillance video, most of the frames are identical due to the fixed location and background. In this case, if it is detected frame by frame, it will cause a waste of computing resources. So according to the keyframe extraction system, detect weapons only when the surveillance video content changes. 
+*	Applicable environment: Suitable for the night when the flow of people is low or in low-security risk areas.
+* Advantage: short detection time and save computing resources.
+*	Disadvantage: There is a certain security risk.
+```
 # Methodologies
 # Environment
 # Usage
