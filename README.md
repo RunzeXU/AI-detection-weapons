@@ -15,6 +15,8 @@ Security cameras and video surveillance systems have become important infrastruc
 * [Methodologies](#Methodologies)
 * [Environment](#Environment)
 * [Usage](#Usage)
+* [Result](#Result)
+
 *****
 # Introduction
 At present, Artificial intelligence is no longer part of a strange new term. Not only the ALPHAGO but also the face scan payment technology, even drones, and driverless vehicles, the application of artificial intelligence gradually involves many aspects of our daily life. No doubt safety is one of the most important aspects of daily life and technology is becoming more mature. Nevertheless, today's mainstream security methods have been unable to meet the numerous security risks posed by technological development. The problem is that it is difficult to find a safe, effective, and low-cost way to ensure security.
@@ -116,5 +118,47 @@ Max_total_detections  |    100     |
 
 ****
 # Environment
+Table 2 summarizes the software environment used for developing the system’s functions. 
+
+   **TABLE 2**
+      
+Name|     Version     |
+--------- | --------|
+ Operating System |Microsoft Windows 10 (64-bit) |
+Python  | 3.7.3|
+TensorFlow  | 1.14.0|
+Graphics Drive  | Radeon Software Adrenalin 19.20|
+Conda | 4.7.12 |
+
+## Development environment setup
+1. Install Python
+```
+Download`Anaconda3`,make it as the default Python version (3.7.3) and configure the environment variables.
+```  
+2. Install TensorFlow
+Install the CPU version of TensorFlow.
+* Call the Command Prompt though `Strat`->`Anaconda3`->`Anaconda Prompt`
+```
+pip install --upgrade tensorflow
+```
+## Download TensorFlow object detection API
+
+Download from the  [TensorFlow object detection](https://github.com/tensorflow/models)
+
+## Install Protocol Buffers
+
+Download from  [Protocol Buffers](https://github.com/google/protobuf/releases)
+* After the UnZip, but the `prtoc.exe` in file`bin` into `C:\\Windows`
+
+## Setup envionment variables for PYTHONPATH
+* Add the full directory of folder `Models/Research/` and folder `Models/Research/Slim ` into `PATHONPATH` in  `system variables` of the Windows system
+
+## Testing
+* Testing the TensorFlow object detection API, Run the command line under the `Models/Research/`folder
+```
+python object_detection/builders/model_builder_test.py
+```
+****
 # Usage
+# Result
 
