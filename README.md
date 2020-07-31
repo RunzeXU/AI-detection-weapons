@@ -132,9 +132,9 @@ Conda | 4.7.12 |
 
 ## Development environment setup
 1. Install Python
-```
-Download`Anaconda3`,make it as the default Python version (3.7.3) and configure the environment variables.
-```  
+
+* Download`Anaconda3`,make it as the default Python version (3.7.3) and configure the environment variables.
+
 2. Install TensorFlow
 Install the CPU version of TensorFlow.
 * Call the Command Prompt though `Strat`->`Anaconda3`->`Anaconda Prompt`
