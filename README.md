@@ -106,7 +106,7 @@ Below is a brief overview of how to fine-tune existing models for custom objects
 Name|     parameter      |
 --------- | --------|
  Pretrained model |ssd_moblienet_v1_coco |
-Num_classes  | 5 |
+Num_classes  | 6 |
 Matched_threshold  | 0.5 |
 Unmatched_threshold  | 0.5 |
 Batch_size  | 5 |
