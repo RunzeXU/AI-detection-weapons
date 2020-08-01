@@ -306,6 +306,33 @@ python export_inference_graph.py \
 
 ![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/output%20dire.JPG)
 * After got the `frozen_inference_graph.pb`, we can through [gun_image_testing](https://github.com/RunzeXU/AI-detection-weapons/blob/master/gun_image_test.py) to perform weapons image detection and through [gun_video_testing](https://github.com/RunzeXU/AI-detection-weapons/blob/master/gun_video_testing.py) to perform Real-time weapons detection.
-
+****
 # Result
+A low-cost, efficient, and artificial intelligence-based solution for the real-time detection and recognition of weapons in surveillance videos has been developed. The system can detect weapons within `6` categories, including `handgun`, `shotgun`, `automatic rifle`, `sniper rifle`, `knife`, and `submachine gun`. At the` intersection over union (IoU)` value of `0.50` and `0.75`, the system achieved a `precision` of `0.8524`and `0.7006`, respectively. At the `Energy-saving mode`, the corresponding time for the system to detect a single image is `1.10` seconds. For `high-performance mode`, the system achieves `real-time` detection and gives weapon detection results synchronized with surveillance video. For a surveillance video, the duration of the video is `148 seconds` the size of the video is 19.8 MB (20,807,246 Bytes), the reaction time of the system detection weapon is also `148 seconds`
+
+* Detection result-submachine gun
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/SB22.jpg)
+
+* Detection result-handgun
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/image15.jpg)
+
+* Detection result-shotgun
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/SG21.jpg)
+
+* Detection result-sniper rifle
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/SR17.jpg)
+
+* Detection result-automatic rifle
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/TSG5.jpg)
+
+* Detection result-knife
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/knife.74.jpg)
+
+* Screen capture for Real-time detection
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/2.JPG)
 
