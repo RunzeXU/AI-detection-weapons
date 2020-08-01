@@ -145,6 +145,8 @@ pip install --upgrade tensorflow
 
 Download from the  [TensorFlow object detection](https://github.com/tensorflow/models)
 
+***This system donot support TensorFlow versin 2.0 or later***
+
 ## Install Protocol Buffers
 
 Download from  [Protocol Buffers](https://github.com/google/protobuf/releases)
@@ -160,5 +162,20 @@ python object_detection/builders/model_builder_test.py
 ```
 ****
 # Usage
+
+## Create training/test data sets
+1. Use the images extracted by keyframe extraction function as the train and test images.
+2. Use the software ‘[LabelImg](https://github.com/tzutalin/labelImg)’, manually label the train images. Create an `XML` file that describes the objects in the pictures. This is called labeling
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/Labelimg1.png)
+
+In Figure 3.3,it shown the part of the training dataset with the corresponding XML file after labeling.
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/Fig3.3.png)
+
+* For TensorFlow, we need to enter Google’s specific data format, so we need to convert our data into TFRecords Format.
+1. Use [gun_xml_to_csv](https://github.com/RunzeXU/AI-detection-weapons/blob/master/gun_xml_to_csv.py) to convert XML file to CSV file.
+2. Generate TFRecord file from CSV file through [generate_TRF](https://github.com/RunzeXU/AI-detection-weapons/blob/master/generate_TFR.py)
+
 # Result
 
