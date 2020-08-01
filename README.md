@@ -177,5 +177,135 @@ In Figure 3.3,it shown the part of the training dataset with the corresponding X
 1. Use [gun_xml_to_csv](https://github.com/RunzeXU/AI-detection-weapons/blob/master/gun_xml_to_csv.py) to convert XML file to CSV file.
 2. Generate TFRecord file from CSV file through [generate_TRF](https://github.com/RunzeXU/AI-detection-weapons/blob/master/generate_TFR.py)
 
+* create the `PBTXT` file of `label map`,which contain the `weapons name` and `correspond ID`
+```
+item {
+  name: "Sniper rifle"
+  id: 1
+}
+item {
+  name: "Automatic Rifle"
+  id: 2
+}
+item {
+  name: "Submachine gun"
+  id: 3
+}
+item {
+  name: "Shotgun"
+  id: 4
+}
+item {
+  name: "Handgun"
+  id: 5
+}
+item {
+  name: "Knife"
+  id: 6
+}
+```
+
+* The `weapons name` and `ID` in [generate_TRF](https://github.com/RunzeXU/AI-detection-weapons/blob/master/generate_TFR.py) should be consistent with `lable map`
+```
+def class_text_to_int(row_label):
+    if row_label == 'Sniper rifle':
+        return 1
+    elif row_label == 'Automatic Rifle':
+        return 2
+    elif row_label == 'Submachine gun':
+        return 3
+    elif row_label == 'Shotgun':
+        return 4
+    elif row_label == 'Handgun':
+        return 5
+    elif row_label == 'Knife':
+        return 6
+    else:
+        None
+```
+
+* Run the [generate_TRF](https://github.com/RunzeXU/AI-detection-weapons/blob/master/generate_TFR.py) with command
+```
+# From tensorflow/models/
+  # Create train data:
+  python generate_TFR.py --csv_input=data/gun_train.csv  --output_path=data/gun_train.record
+  # Create test data:
+  python generate_TFR.py --csv_input=data/gun_test.csv  --output_path=data/gun_test.record
+```
+* So far, the preparation of all the training and test data  have completed
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/train_test%20set.png)
+
+## Setting configuration file
+Find the sample of the configuration file in [model configs of TensorFlow](https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs)
+* In this system,[ssd_mobilenet_v1_coco](https://github.com/tensorflow/models/blob/master/research/object_detection/samples/configs/ssd_mobilenet_v1_coco.config) will adopt
+1. Download [ssd_mobilenet_v1_coco.config](https://github.com/tensorflow/models/blob/master/research/object_detection/samples/configs/ssd_mobilenet_v1_coco.config), put the file in to `traning` folder and open it with text editor.
+2.  Search for "PATH_TO_BE_CONFIGURED" to find the fields that should be configured.
+```
+train_input_reader: {
+tf_record_input_reader {
+input_path: "PATH_TO_BE_CONFIGURED/C:\\Users\\28771\\models\\research\\object_detection\\data\\gun_train.record"
+}
+label_map_path: "PATH_TO_BE_CONFIGURED/C:\\Users\\28771\\models\\research\\object_detection\\data\\gun.pbtxt"
+}
+```
+```
+eval_input_reader: {
+tf_record_input_reader {
+input_path: "PATH_TO_BE_CONFIGURED/C:\\Users\\28771\\models\\research\\object_detection\\data\\gun_test.record"
+}
+label_map_path: "PATH_TO_BE_CONFIGURED/C:\\Users\\28771\\models\\research\\object_detection\\data\\gun.pbtxt"
+shuffle: false
+num_readers: 1
+}
+```
+3. Change `NUM_classes` as practical situation
+* In this system, the number of weapons categories are 6
+```
+num_classes: 6
+```
+4. If do not have sufficient graphics memory, please change the parameter of `batch_size`
+```
+train_config: {
+batch_size: 5
+```
+## Training the model
+* In the new verion of TensorFlow, the Training file is ：
+```
+model_main.py
+```
+* Training model through the following command,set the number of training steps to 200000 and evaluate the number of steps to 6000:
+```
+# From the tensorflow/models/research/ directory
+python object_detection/model_main.py \ 
+       --pipeline_config_path=object_detection/training2/ssd_mobilenet_v1_coco.config \ 
+       --model_dir=object_detection/training2 \ 
+       --num_train_steps=200000 \ 
+       --num_eval_steps=6000 \ 
+       --alsologtostderr
+```
+* Through Command Prompt, the training process can be viewed
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/43552.PNG)
+
+## Test the model 
+After the training, We can test the  model. Find the `export_inference_pictures.py` file under the `Models \ Research \ Object_detection` folder. To run this file, you still need to pass in the `config` and the parameters associated with `checkpoint`.
+* Open `Anaconda Prompt` and located under the `Models \ Research \ Object_Detection` folder, run the command:
+```
+python export_inference_graph.py \ 
+       --input_type image_tensor \ 
+       --pipeline_config_path training/ssd_mobilenet_v1_coco.config \  
+       --trained_checkpoint_prefix training/
+        model.ckpt-200000 \  
+       --output_directory knife_detection
+```
+* For `--trained_checkpoint_prefix training/model.ckpt-200000`, the number after the `.ckpt` represent the `checkpoint`, you can find the situation of your own training model under the `training` folder and fill in the corresponding number.( ***If there have more than one number, you can choose the largest one***).
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/ckpt.JPG)
+
+* For`--output_directory knife_detection` is the output directory.After running , you'll find a bunch of files under the `knife_detection` folder. which include `saved_model`、`checkpoint`、`frozen_inference_graph.pb`.And the `fozen model` is trained model.
+
+![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/output%20dire.JPG)
+* After got the `frozen_inference_graph.pb`, we can through [gun_image_testing](https://github.com/RunzeXU/AI-detection-weapons/blob/master/gun_image_test.py) to perform weapons image detection and through [gun_video_testing](https://github.com/RunzeXU/AI-detection-weapons/blob/master/gun_video_testing.py) to perform Real-time weapons detection.
+
 # Result
 
