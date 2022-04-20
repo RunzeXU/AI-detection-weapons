@@ -150,7 +150,7 @@ Download from the  [TensorFlow object detection](https://github.com/tensorflow/m
 ## Install Protocol Buffers
 
 Download from  [Protocol Buffers](https://github.com/google/protobuf/releases)
-* After the UnZip, but the `prtoc.exe` in file`bin` into `C:\\Windows`
+* After the UnZip, put the `prtoc.exe` in file`bin` into `C:\\Windows`
 
 ## Setup envionment variables for PYTHONPATH
 * Add the full directory of folder `Models/Research/` and folder `Models/Research/Slim ` into `PATHONPATH` in  `system variables` of the Windows system
