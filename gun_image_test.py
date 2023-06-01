@@ -2,7 +2,7 @@
 """
 Created on Sun Nov 24 12:26:33 2019
 
-@author: 28771
+@author: rz
 """
 
 import time
@@ -26,7 +26,7 @@ import pandas as pd
 if StrictVersion(tf.__version__) < StrictVersion('1.4.0'):
   raise ImportError('Please upgrade your tensorflow installation to v1.4.* or later!')
   
-os.chdir('C:\\Users\\28771\\models\\research\\object_detection')
+os.chdir('~\\models\\research\\object_detection')
   
   
 #Env setup 
@@ -106,15 +106,15 @@ def load_image_into_numpy_array(image):
 
 #Detection
 # If you want to test the code with your images, just add path to the images to the TEST_IMAGE_PATHS.
-PATH_TO_TEST_IMAGES_DIR = 'C:\\Users\\28771\\models\\research\\object_detection\\test_images\\'
+PATH_TO_TEST_IMAGES_DIR = '~\\models\\research\\object_detection\\test_images\\'
 os.chdir(PATH_TO_TEST_IMAGES_DIR)
 TEST_IMAGE_DIRS = os.listdir(PATH_TO_TEST_IMAGES_DIR)
 
 # Size, in inches, of the output images.
 IMAGE_SIZE = (12, 8)
 
-output_image_path = ('C:\\Users\\28771\\models\\research\\object_detection\\gun_output\\pics\\')
-output_csv_path = ('C:\\Users\\28771\\models\\research\\object_detection\\gun_output\\csv\\')
+output_image_path = ('~\\models\\research\\object_detection\\gun_output\\pics\\')
+output_csv_path = ('~\\models\\research\\object_detection\\gun_output\\csv\\')
 
 for image_folder in TEST_IMAGE_DIRS:
     with detection_graph.as_default():

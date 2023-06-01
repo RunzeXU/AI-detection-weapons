@@ -2,7 +2,7 @@
 """
 Created on Wed Apr 15 18:58:50 2020
 
-@author: 28771
+@author: rz
 """
 
 import time
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     NUM_TOP_FRAMES = 50
      
     #Video path of the source file
-    videopath = 'C:\\Users\\28771\\models\\research\\object_detection\\test_images1\\video7.mp4'
+    videopath = '~\\models\\research\\object_detection\\test_images1\\video7.mp4'
     #Directory to store the processed frames
     dir = './extract_testknife/'
     #smoothing window size

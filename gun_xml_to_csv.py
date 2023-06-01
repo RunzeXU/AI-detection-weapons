@@ -2,7 +2,7 @@
 """
 Created on Fri Nov 22 13:53:43 2019
 
-@author: 28771
+@author: rz
 """
 
 import os
@@ -10,8 +10,8 @@ import glob
 import pandas as pd
 import xml.etree.ElementTree as ET
 
-os.chdir('C:\\Users\\28771\\models\\research\\object_detection\\images2\\test')
-path = 'C:\\Users\\28771\\models\\research\\object_detection\\images2\\test'
+os.chdir('~\\models\\research\\object_detection\\images2\\test')
+path = '~\\models\\research\\object_detection\\images2\\test'
 
 def xml_to_csv(path):
     xml_list = []

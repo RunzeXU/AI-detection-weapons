@@ -243,17 +243,17 @@ Find the sample of the configuration file in [model configs of TensorFlow](https
 ```
 train_input_reader: {
 tf_record_input_reader {
-input_path: "PATH_TO_BE_CONFIGURED/C:\\Users\\28771\\models\\research\\object_detection\\data\\gun_train.record"
+input_path: "PATH_TO_BE_CONFIGURED/\\models\\research\\object_detection\\data\\gun_train.record"
 }
-label_map_path: "PATH_TO_BE_CONFIGURED/C:\\Users\\28771\\models\\research\\object_detection\\data\\gun.pbtxt"
+label_map_path: "PATH_TO_BE_CONFIGURED/\\models\\research\\object_detection\\data\\gun.pbtxt"
 }
 ```
 ```
 eval_input_reader: {
 tf_record_input_reader {
-input_path: "PATH_TO_BE_CONFIGURED/C:\\Users\\28771\\models\\research\\object_detection\\data\\gun_test.record"
+input_path: "PATH_TO_BE_CONFIGURED/\\models\\research\\object_detection\\data\\gun_test.record"
 }
-label_map_path: "PATH_TO_BE_CONFIGURED/C:\\Users\\28771\\models\\research\\object_detection\\data\\gun.pbtxt"
+label_map_path: "PATH_TO_BE_CONFIGURED/\\models\\research\\object_detection\\data\\gun.pbtxt"
 shuffle: false
 num_readers: 1
 }

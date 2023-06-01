@@ -2,7 +2,7 @@
 """
 Created on Fri Feb 14 15:04:55 2020
 
-@author: 28771
+@author: rz
 """
 import time
 start = time.time()
@@ -84,7 +84,7 @@ def detect_in_video():
                 'num_detections:0')
             #cv2.VideoCapture (): 0 is the default camera of the computer, 1 can change the source.
             #for example: direct access to surveillance cameras
-            cap = cv2.VideoCapture('C:\\Users\\28771\\models\\research\\object_detection\\test_images1\\video7.mp4')
+            cap = cv2.VideoCapture('~\\models\\research\\object_detection\\test_images1\\video7.mp4')
  
             while(cap.isOpened()):
                 # Read the frame and capture frame-by-frame
