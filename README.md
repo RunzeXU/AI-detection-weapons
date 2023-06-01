@@ -233,6 +233,8 @@ def class_text_to_int(row_label):
   python generate_TFR.py --csv_input=data/gun_test.csv  --output_path=data/gun_test.record
 ```
 * So far, the preparation of all the training and test data  have completed
+
+
 ![](https://github.com/RunzeXU/AI-detection-weapons/blob/master/asset/train_test%20set.png)
 
 ## Setting configuration file
